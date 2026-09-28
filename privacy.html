@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skim Privacy Policy</title>
+<meta name="description" content="What data the Skim app collects, how it is used, and the choices you have.">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="./"><img src="icon.png" alt="">Skim</a>
+  <nav>
+    <a href="./">Home</a>
+    <a href="guide.html">User guide</a>
+    <a href="privacy.html" aria-current="page">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </nav>
+</div></header>
+<main class="wrap">
+<h1>Privacy Policy</h1>
+<p class="meta">Effective 29 September 2026</p>
+
+<p>This policy explains what information the Skim app ("Skim", "the app") handles, why, and what control you have over it. Skim is built and run by Al Arafat Tanin, an individual developer ("I", "me"). Package name: <code>com.rng70.researchhub</code>.</p>
+
+<div class="note"><strong>In short:</strong> Skim has no ads, no analytics and no tracking SDKs, and it never sells your data. Most of what you do stays on your phone. If you sign in, your library is stored on the app's backend so it can sync across your devices, and only your account can read it.</div>
+
+<h2>1. Using Skim without an account</h2>
+<p>You can use Skim without signing in. Your topics, inbox, notes, highlights, collections, reading progress and settings are then stored only on your device. None of it is sent to me.</p>
+
+<h2>2. Information you give when you sign in</h2>
+<p>You can sign in with Google or with an email address and password. Accounts are managed by Supabase, the backend provider Skim uses (see section 6).</p>
+<ul>
+  <li><strong>Google Sign-In:</strong> Skim asks Google only for your basic profile: your name, email address and profile picture URL. Skim does not request access to your Gmail, Drive, contacts, calendar or any other Google data.</li>
+  <li><strong>Email sign-in:</strong> your email address and a password. The password is handled by Supabase's authentication service and stored only as a hash. I never see it.</li>
+</ul>
+<p>Your sign-in session is kept in your phone's secure keystore.</p>
+
+<h2>3. Information stored when you sync</h2>
+<p>When you are signed in, Skim syncs the following to its backend so your library is the same on every device:</p>
+<table>
+  <tr><th>Data</th><th>Why</th></tr>
+  <tr><td>Research interests: topics, keywords, venues, muted topics, ranking weights</td><td>To rank your feed the same way on each device</td></tr>
+  <tr><td>Inbox state: which papers you saved, favourited, read or skipped</td><td>To keep your triage in sync</td></tr>
+  <tr><td>Collections, notes and highlights</td><td>To keep your annotations in sync</td></tr>
+  <tr><td>Profile you choose to fill in: handle, display name, bio, and whether the profile is public</td><td>Only if you set up a profile</td></tr>
+  <tr><td>Papers you send from the Skim browser extension (a DOI or arXiv ID and the page it came from)</td><td>So the app can add them to your inbox</td></tr>
+</table>
+<p>This data is protected by row-level access rules: only your signed-in account can read or change it. Two things become visible to others only when you turn them on:</p>
+<ul>
+  <li>A <strong>shared collection</strong> can be opened by anyone who has its link. The link is random and cannot be guessed.</li>
+  <li>A <strong>public profile</strong> shows your handle, display name, bio and shared collections. It never shows your email address.</li>
+</ul>
+
+<h2>4. Summaries and AI features</h2>
+<p>Skim can summarise and explain a paper's title and abstract. You choose how in Settings:</p>
+<ul>
+  <li><strong>Built-in:</strong> a simple offline summary made on your device. Nothing is sent anywhere.</li>
+  <li><strong>On-device model:</strong> Skim downloads an open AI model (Google's Gemma) from Hugging Face once, then runs it entirely on your phone. Paper text never leaves the device.</li>
+  <li><strong>Your own AI provider:</strong> if you enter your own API key for Anthropic, Google Gemini, OpenAI or OpenRouter, the paper's title and abstract (and any question you type in chat) are sent directly from your phone to that provider under your own account with them. Their privacy policy applies to that request. Your API key is stored in your phone's secure keystore and is never sent to me.</li>
+</ul>
+<p><strong>Shared summary library.</strong> When you are signed in, summaries of public papers made by a capable AI model are shared to a common library so other users of the same paper can reuse them without generating their own. A shared summary contains only the paper identifier, the summary text and the model name. Other users never see who contributed it. You can turn this off in Settings under "Contribute to shared library".</p>
+
+<h2>5. Paper sources</h2>
+<p>To find and show papers, the app sends requests to public scholarly services: arXiv, Semantic Scholar, Crossref, OpenAlex, Unpaywall, ORCID and Grants.gov. These requests contain search terms, topics and paper identifiers (such as DOIs). They do not include your name, email address or account. Like any website, these services can see your device's IP address when it connects to them.</p>
+
+<h2>6. Service providers</h2>
+<table>
+  <tr><th>Provider</th><th>Role</th></tr>
+  <tr><td>Supabase</td><td>Hosts accounts, the synced library and the shared summary library</td></tr>
+  <tr><td>Google</td><td>Google Sign-In, if you choose it</td></tr>
+  <tr><td>Hugging Face</td><td>Hosts the on-device model file, downloaded only if you choose the on-device model</td></tr>
+  <tr><td>AI provider you choose</td><td>Only if you add your own API key (section 4)</td></tr>
+  <tr><td>GitHub</td><td>Hosts this website and app downloads</td></tr>
+</table>
+
+<h2>7. What Skim does not do</h2>
+<ul>
+  <li>No advertising, ad identifiers, analytics or crash-reporting SDKs.</li>
+  <li>No selling, renting or trading of personal data.</li>
+  <li>No use of your data to train AI models.</li>
+  <li>No access to your contacts, location, camera, microphone or files beyond ones you choose to import or export.</li>
+</ul>
+
+<h2>8. Permissions on Android</h2>
+<ul>
+  <li><strong>Notifications:</strong> for the daily digest and alerts you set up. They are scheduled on your device.</li>
+  <li><strong>Run at startup:</strong> so scheduled notifications survive a phone restart.</li>
+  <li><strong>Internet:</strong> to fetch papers and sync.</li>
+</ul>
+
+<h2>9. Google user data</h2>
+<p>Skim's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Your Google name, email address and profile picture are used only to create and show your Skim account. They are not shared with third parties, not used for advertising, and not used to train AI models.</p>
+
+<h2>10. How long data is kept</h2>
+<p>Synced data is kept for as long as your account exists. Data on your device stays until you delete it, clear the app's storage or uninstall the app. Signing out removes your session from the device.</p>
+
+<h2 id="11-deleting-your-data">11. Deleting your data</h2>
+<ul>
+  <li><strong>On your device:</strong> clear the app's storage in Android settings or uninstall Skim.</li>
+  <li><strong>Your account and synced data:</strong> open an issue at <a href="https://github.com/rng70/skim-app/issues">github.com/rng70/skim-app/issues</a> titled "Account deletion request". Do not post your email address in the issue. I will reply there with a private way to confirm the account is yours, then delete the account and all synced data linked to it within 30 days. Summaries you contributed to the shared library carry no link to you and stay in the library.</li>
+</ul>
+
+<h2>12. Security</h2>
+<p>Traffic between the app and its backend is encrypted with HTTPS. Your synced data is isolated per account by the database's access rules. Your session and any API keys are kept in the phone's secure keystore. No system is perfectly secure, but I work to protect your data and will tell affected users about a breach that puts their data at risk.</p>
+
+<h2>13. Children</h2>
+<p>Skim is not directed at children under 13, and I do not knowingly collect personal information from them. If you believe a child has created an account, open an issue and I will delete it.</p>
+
+<h2>14. Changes to this policy</h2>
+<p>If this policy changes, the new version will be posted on this page with a new effective date. Significant changes will also be noted in the app's release notes.</p>
+
+<h2>15. Contact</h2>
+<p>Questions about privacy: <a href="https://github.com/rng70/skim-app/issues">github.com/rng70/skim-app/issues</a>.</p>
+</main>
+<footer class="site"><div class="wrap">
+  <span>© 2026 Al Arafat Tanin</span>
+  <a href="privacy.html">Privacy policy</a>
+  <a href="terms.html">Terms of service</a>
+  <a href="https://github.com/rng70/skim-app/issues">Contact &amp; support</a>
+</div></footer>
+</body>
+</html>
